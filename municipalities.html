@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Municipalities | URBAN SOLUTIONS AFRICA</title>
+    <meta
+      name="description"
+      content="Learn more about the municipalities we serve, including the City of Johannesburg, City of Tshwane, and City of Ekurhuleni, and how we support clients across each metro."
+    />
+    <style>
+      :root {
+        --navy: #4a151b;
+        --navy-2: #241014;
+        --gold: #c65a1e;
+        --gold-light: #f1a15b;
+        --ivory: #fbf4ec;
+        --text: #251a18;
+        --muted: #6d5a55;
+        --white: #ffffff;
+        --shadow: 0 20px 50px rgba(74, 21, 27, 0.14);
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: linear-gradient(180deg, #f8efe8 0%, #ffffff 100%);
+        color: var(--text);
+        line-height: 1.7;
+      }
+      a { text-decoration: none; }
+      .container { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+
+      header {
+        background: rgba(13, 27, 42, 0.96);
+        color: var(--white);
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        border-bottom: 1px solid rgba(200, 169, 107, 0.3);
+      }
+      .nav {
+        min-height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--gold-light);
+        font-size: 1.3rem;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        text-shadow: 0 2px 16px rgba(232, 213, 162, 0.2);
+      }
+      .brand img {
+        width: 64px;
+        height: 50px;
+        object-fit: contain;
+        padding: 3px;
+        border-radius: 8px;
+        background: var(--white);
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+      .nav-links a {
+        color: rgba(255,255,255,0.8);
+        font-size: 0.92rem;
+        letter-spacing: 0.04em;
+      }
+      .nav-links a:hover { color: var(--gold-light); }
+
+      .page-hero {
+        background: linear-gradient(135deg, rgba(13, 27, 42, 0.92), rgba(22, 38, 61, 0.78)),
+          url('https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+        color: var(--white);
+        padding: 90px 0 75px;
+      }
+      .hero-inner {
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        align-items: center;
+        gap: 32px;
+      }
+      .page-hero-content { max-width: 760px; }
+      .eyebrow {
+        display: inline-block;
+        padding: 8px 16px;
+        border-radius: 999px;
+        background: rgba(200, 169, 107, 0.12);
+        border: 1px solid rgba(200, 169, 107, 0.35);
+        color: var(--gold-light);
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+      h1 {
+        font-size: clamp(2.5rem, 5vw, 4.2rem);
+        margin: 18px 0 14px;
+        letter-spacing: -0.04em;
+        line-height: 1.05;
+      }
+      .page-hero p {
+        margin: 0;
+        color: rgba(255,255,255,0.88);
+        font-size: 1.08rem;
+      }
+      .hero-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 22px;
+      }
+      .hero-badges span {
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.12);
+        color: rgba(255,255,255,0.88);
+        font-size: 0.74rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .hero-panel {
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(200,169,107,0.28);
+        backdrop-filter: blur(6px);
+        border-radius: 24px;
+        padding: 26px 22px;
+        box-shadow: 0 18px 38px rgba(4, 10, 18, 0.25);
+      }
+      .panel-label {
+        color: var(--gold-light);
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 14px;
+      }
+      .hero-stat-row {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-bottom: 24px;
+      }
+      .stat {
+        background: rgba(255,255,255,0.03);
+        border-radius: 16px;
+        padding: 16px 10px;
+        text-align: center;
+        border: 1px solid rgba(255,255,255,0.08);
+      }
+      .stat strong {
+        display: block;
+        color: var(--gold-light);
+        font-size: 1.8rem;
+        line-height: 1;
+      }
+      .stat span {
+        color: rgba(255,255,255,0.7);
+        font-size: 0.72rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .city-spotlight {
+        padding-top: 18px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+      }
+      .city-spotlight p {
+        margin: 0 0 8px;
+        color: rgba(255,255,255,0.7);
+        font-size: 0.76rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      .city-spotlight h3 {
+        margin: 0;
+        font-size: 1.5rem;
+        color: var(--white);
+      }
+
+      section { padding: 88px 0; }
+      .section-head {
+        text-align: center;
+        margin-bottom: 34px;
+      }
+      .section-head h2 {
+        margin: 0 0 10px;
+        font-size: clamp(2rem, 4vw, 3rem);
+        color: var(--navy);
+        letter-spacing: -0.04em;
+      }
+      .section-head p {
+        max-width: 760px;
+        margin: 0 auto;
+        color: var(--muted);
+      }
+
+      .map-layout {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 28px;
+        align-items: stretch;
+      }
+      .map-panel,
+      .city-selector-panel {
+        background: var(--white);
+        border-radius: 26px;
+        box-shadow: var(--shadow);
+        border: 1px solid rgba(13,27,42,0.06);
+      }
+      .map-panel {
+        overflow: hidden;
+        padding: 14px;
+      }
+      .map-surface {
+        position: relative;
+        min-height: 420px;
+        background: linear-gradient(135deg, #102238 0%, #182d49 45%, #091a2d 100%);
+        border-radius: 20px;
+        overflow: hidden;
+      }
+      .map-surface iframe {
+        width: 100%;
+        height: 100%;
+        min-height: 420px;
+        border: 0;
+        display: block;
+        filter: grayscale(0.2) contrast(1.1) saturate(0.8);
+      }
+      .map-pin {
+        position: absolute;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 62px;
+        padding: 8px 10px;
+        border-radius: 999px;
+        background: rgba(200,169,107,0.14);
+        border: 1px solid rgba(200,169,107,0.5);
+        color: var(--gold-light);
+        font-size: 0.7rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+      }
+      .pin-jhb { top: 22%; left: 38%; }
+      .pin-tsh { top: 48%; left: 56%; }
+      .pin-ek { top: 68%; left: 66%; }
+
+      .city-selector-panel {
+        padding: 22px;
+      }
+      .selector-tabs {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        margin-bottom: 18px;
+      }
+      .city-tab {
+        border: 1px solid rgba(13,27,42,0.08);
+        border-radius: 12px;
+        background: #f3efe9;
+        color: var(--navy);
+        padding: 12px 10px;
+        font-size: 0.82rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+      .city-tab.active {
+        background: linear-gradient(135deg, rgba(200,169,107,0.18), rgba(200,169,107,0.08));
+        border-color: rgba(200,169,107,0.7);
+        color: var(--navy);
+      }
+      .city-detail {
+        display: none;
+        padding: 18px 4px 6px;
+      }
+      .city-detail.active {
+        display: block;
+      }
+      .meta-tag {
+        display: inline-block;
+        margin-bottom: 10px;
+        padding: 7px 10px;
+        border-radius: 999px;
+        background: rgba(200,169,107,0.12);
+        color: #7c662f;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-size: 0.68rem;
+        font-weight: 800;
+      }
+      .city-detail h3 {
+        margin: 0 0 10px;
+        font-size: clamp(1.7rem, 2vw, 2.2rem);
+        color: var(--navy);
+      }
+      .city-detail p {
+        margin: 0 0 12px;
+        color: var(--muted);
+      }
+      .city-detail ul {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--muted);
+      }
+      .city-detail li {
+        margin-bottom: 7px;
+      }
+
+      .city-form {
+        border-top: 1px solid rgba(13,27,42,0.08);
+        margin-top: 18px;
+        padding-top: 18px;
+      }
+      .form-kicker {
+        display: inline-block;
+        color: var(--gold);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-size: 0.7rem;
+        font-weight: 800;
+      }
+      .city-form h4 {
+        margin: 8px 0 16px;
+        color: var(--navy);
+        font-size: 1.3rem;
+      }
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        font-size: 0.8rem;
+        color: var(--muted);
+      }
+      .field input,
+      .field select,
+      .field textarea {
+        width: 100%;
+        border: 1px solid rgba(13,27,42,0.12);
+        border-radius: 12px;
+        background: #f9f7f4;
+        padding: 11px 12px;
+        font: inherit;
+        color: var(--text);
+      }
+      .field textarea {
+        min-height: 90px;
+        resize: vertical;
+      }
+      .field.full {
+        grid-column: 1 / -1;
+      }
+      .form-action {
+        margin-top: 14px;
+      }
+      .submit-btn {
+        border: 0;
+        border-radius: 999px;
+        background: linear-gradient(135deg, var(--gold-light), var(--gold));
+        color: var(--navy);
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        padding: 12px 18px;
+        cursor: pointer;
+        box-shadow: 0 16px 26px rgba(200,169,107,0.22);
+      }
+
+      .cta-section {
+        background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
+        color: var(--white);
+      }
+      .cta-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 22px;
+        flex-wrap: wrap;
+      }
+      .cta-wrap h3 {
+        margin: 0 0 8px;
+        font-size: clamp(1.8rem, 3vw, 2.6rem);
+      }
+      .cta-wrap p { margin: 0; color: rgba(255,255,255,0.78); }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        padding: 15px 26px;
+        font-weight: 700;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .btn:hover { transform: translateY(-2px); }
+      .btn-primary {
+        background: linear-gradient(135deg, var(--gold-light), var(--gold));
+        color: var(--navy);
+        box-shadow: 0 18px 30px rgba(200, 169, 107, 0.3);
+      }
+
+      footer {
+        background: #0a1826;
+        color: rgba(255,255,255,0.8);
+        text-align: center;
+        padding: 26px 0;
+      }
+
+      @media (max-width: 900px) {
+        .map-layout { grid-template-columns: 1fr; }
+      }
+      @media (max-width: 680px) {
+        .nav { flex-direction: column; justify-content: center; gap: 12px; padding: 14px 0; }
+
+      header { background: rgba(36, 16, 20, 0.97); border-color: rgba(241, 161, 91, 0.35); }
+      .page-hero { background: linear-gradient(135deg, rgba(36, 16, 20, 0.94), rgba(74, 21, 27, 0.84)), url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat; }
+      .municipality-card, .info-card { background: linear-gradient(180deg, #fffaf5 0%, #f6e8da 100%); border-color: rgba(74, 21, 27, 0.1); }
+      footer { background: #160b0d; }
+        .nav-links { justify-content: center; }
+        .selector-tabs { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <a class="brand" href="URBAN%20SOLUTIONS%20AFRICA.html">
+          <img src="WhatsApp%20Image%202026-08-13%20at%2017.57.10.jpeg" alt="Urban Solutions Africa logo" />
+          <span>Urban Solutions Africa</span>
+        </a>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="URBAN%20SOLUTIONS%20AFRICA.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="why-us.html">Why Us</a>
+          <a href="municipalities.html">Municipalities</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+        <div class="container hero-inner">
+          <div class="page-hero-content">
+            <span class="eyebrow">Municipal coverage</span>
+            <h1>Luxury guidance across the metros that matter most.</h1>
+            <p>
+              We provide discreet, expert municipal support across the major metro areas, helping clients move through local requirements with confidence, clarity, and efficiency.
+            </p>
+            <div class="hero-badges">
+              <span>Johannesburg</span>
+              <span>Tshwane</span>
+              <span>Ekurhuleni</span>
+            </div>
+          </div>
+
+          <div class="hero-panel">
+            <div class="panel-label">Coverage footprint</div>
+            <div class="hero-stat-row">
+              <div class="stat">
+                <strong>3</strong>
+                <span>metros</span>
+              </div>
+              <div class="stat">
+                <strong>24/7</strong>
+                <span>support</span>
+              </div>
+              <div class="stat">
+                <strong>100%</strong>
+                <span>focus</span>
+              </div>
+            </div>
+            <div class="city-spotlight">
+              <p>Current city focus</p>
+              <h3 id="spotlight-title">Johannesburg</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="section-head">
+            <h2>Municipalities We Serve</h2>
+            <p>
+              Our services are tailored to the realities of each municipality, ensuring that clients receive the support they need in the correct local context.
+            </p>
+          </div>
+
+          <div class="map-layout">
+            <div class="map-panel">
+              <div class="map-surface" aria-label="Embedded city map">
+                <iframe
+                  id="city-map"
+                  title="Municipality map"
+                  src="https://www.google.com/maps?q=Johannesburg%20South%20Africa&output=embed"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  allowfullscreen>
+                </iframe>
+                <div class="map-pin pin-jhb">JHB</div>
+                <div class="map-pin pin-tsh">TSH</div>
+                <div class="map-pin pin-ek">EK</div>
+              </div>
+            </div>
+
+            <div class="city-selector-panel">
+              <div class="selector-tabs">
+                <button class="city-tab active" type="button" data-city="jhb">Johannesburg</button>
+                <button class="city-tab" type="button" data-city="tsh">Tshwane</button>
+                <button class="city-tab" type="button" data-city="ek">Ekurhuleni</button>
+              </div>
+
+              <div class="city-detail active" data-city-detail="jhb">
+                <div class="meta-tag">Primary metro</div>
+                <h3>City of Johannesburg</h3>
+                <p>
+                  Johannesburg is one of the busiest metropolitan regions in South Africa, with a high volume of municipal account activity and admin-sensitive property matters.
+                  We help clients move through rates queries, certificate requests, billing support, and municipal process challenges with greater speed and clarity.
+                </p>
+                <ul>
+                  <li>Rates account support</li>
+                  <li>Billing and refund guidance</li>
+                  <li>Certificate and clearance assistance</li>
+                </ul>
+              </div>
+
+              <div class="city-detail" data-city-detail="tsh">
+                <div class="meta-tag">Business & residential</div>
+                <h3>City of Tshwane</h3>
+                <p>
+                  Tshwane includes a diverse mix of residential, commercial, and development-related processes. Clients often need clear support when navigating account updates,
+                  zoning information, or the administrative steps involved in property transactions and municipal compliance.
+                </p>
+                <ul>
+                  <li>Account and query assistance</li>
+                  <li>Plan and zoning information support</li>
+                  <li>Municipal documentation guidance</li>
+                </ul>
+              </div>
+
+              <div class="city-detail" data-city-detail="ek">
+                <div class="meta-tag">Fast-moving local support</div>
+                <h3>City of Ekurhuleni</h3>
+                <p>
+                  Ekurhuleni serves many homeowners, investors, and businesses that require responsive municipal guidance. We support clients with certificates, account matters,
+                  and practical help navigating local requirements without unnecessary delay or confusion.
+                </p>
+                <ul>
+                  <li>Municipal query support</li>
+                  <li>Certificate and compliance assistance</li>
+                  <li>Property and account-related guidance</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section">
+        <div class="container cta-wrap">
+          <div>
+            <h3>Need assistance in your municipality?</h3>
+            <p>We are ready to help you navigate the process with clarity and confidence.</p>
+          </div>
+          <a class="btn btn-primary" href="contact.html">Request Assistance</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        © 2026 URBAN SOLUTIONS AFRICA | Municipal support made easier
+      </div>
+    </footer>
+
+    <script>
+      const tabs = document.querySelectorAll('.city-tab');
+      const details = document.querySelectorAll('.city-detail');
+      const cityMap = document.getElementById('city-map');
+      const spotlightTitle = document.getElementById('spotlight-title');
+
+      const cityMapUrls = {
+        jhb: 'https://www.google.com/maps?q=Johannesburg%20South%20Africa&output=embed',
+        tsh: 'https://www.google.com/maps?q=Tshwane%20South%20Africa&output=embed',
+        ek: 'https://www.google.com/maps?q=Ekurhuleni%20South%20Africa&output=embed'
+      };
+
+      const cityNames = {
+        jhb: 'Johannesburg',
+        tsh: 'Tshwane',
+        ek: 'Ekurhuleni'
+      };
+
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          const target = tab.dataset.city;
+
+          tabs.forEach((btn) => btn.classList.toggle('active', btn === tab));
+          details.forEach((card) => {
+            card.classList.toggle('active', card.dataset.cityDetail === target);
+          });
+
+          cityMap.src = cityMapUrls[target];
+          spotlightTitle.textContent = cityNames[target];
+        });
+      });
+    </script>
+  </body>
+</html>

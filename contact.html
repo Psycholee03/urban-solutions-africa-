@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | URBAN SOLUTIONS AFRICA</title>
+    <meta
+      name="description"
+      content="Contact URBAN SOLUTIONS AFRICA for practical support with municipal and property-related processes."
+    />
+    <style>
+      :root {
+        --navy: #4a151b;
+        --navy-2: #241014;
+        --gold: #c65a1e;
+        --gold-light: #f1a15b;
+        --ivory: #fbf4ec;
+        --text: #251a18;
+        --muted: #6d5a55;
+        --white: #ffffff;
+        --success: #1d7d5f;
+        --shadow: 0 20px 50px rgba(74, 21, 27, 0.14);
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: linear-gradient(180deg, #f8efe8 0%, #ffffff 100%);
+        color: var(--text);
+        line-height: 1.7;
+      }
+      a { text-decoration: none; }
+      .container { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+
+      header {
+        background: rgba(13, 27, 42, 0.96);
+        color: var(--white);
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        border-bottom: 1px solid rgba(200, 169, 107, 0.3);
+      }
+      .nav {
+        min-height: 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--gold-light);
+        font-size: 1.3rem;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        text-shadow: 0 2px 16px rgba(232, 213, 162, 0.2);
+      }
+      .brand img {
+        width: 64px;
+        height: 50px;
+        object-fit: contain;
+        padding: 3px;
+        border-radius: 8px;
+        background: var(--white);
+      }
+      .nav-links {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .nav-links a {
+        color: rgba(255,255,255,0.8);
+        font-size: 0.92rem;
+        letter-spacing: 0.04em;
+      }
+      .nav-links a:hover,
+      .nav-links .active { color: var(--gold-light); }
+
+      .page-hero {
+        background: linear-gradient(135deg, rgba(13, 27, 42, 0.92), rgba(22, 38, 61, 0.78)),
+          url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+        color: var(--white);
+        padding: 96px 0 78px;
+      }
+      .page-hero-content { max-width: 760px; }
+      .eyebrow {
+        display: inline-block;
+        padding: 8px 16px;
+        border-radius: 999px;
+        background: rgba(200, 169, 107, 0.12);
+        border: 1px solid rgba(200, 169, 107, 0.35);
+        color: var(--gold-light);
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+      h1 {
+        font-size: clamp(2.5rem, 5vw, 4.4rem);
+        margin: 18px 0 14px;
+        letter-spacing: -0.04em;
+        line-height: 1.02;
+      }
+      .page-hero p {
+        margin: 0;
+        color: rgba(255,255,255,0.88);
+        font-size: 1.08rem;
+        max-width: 680px;
+      }
+
+      section { padding: 82px 0; }
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 28px;
+        align-items: start;
+      }
+      .contact-card {
+        background: var(--white);
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+        padding: 32px 28px;
+        border: 1px solid rgba(13,27,42,0.05);
+      }
+      .contact-card h2 {
+        margin: 0 0 12px;
+        color: var(--navy);
+        font-size: 1.8rem;
+        line-height: 1.2;
+      }
+      .contact-card > p { margin: 0; color: var(--muted); }
+      .leadership-section {
+        margin-top: 28px;
+        padding: 32px 28px;
+        background: #fffaf5;
+        border: 1px solid rgba(74, 21, 27, 0.1);
+        border-top: 5px solid var(--gold);
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+      }
+      .leadership-heading {
+        margin-bottom: 24px;
+      }
+      .leadership-heading h2 {
+        margin: 0 0 8px;
+        color: var(--navy);
+        font-size: 1.8rem;
+        line-height: 1.2;
+      }
+      .leadership-heading p {
+        margin: 0;
+        color: var(--muted);
+      }
+      .people-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+      }
+      .person-card {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        min-height: 180px;
+        padding: 18px;
+        background: #ffffff;
+        border: 1px solid rgba(74, 21, 27, 0.1);
+        border-radius: 16px;
+        box-shadow: 0 12px 24px rgba(74, 21, 27, 0.08);
+      }
+      .person-card.no-photo { align-items: center; }
+      .person-photo {
+        width: 128px;
+        height: 144px;
+        flex: 0 0 128px;
+        border-radius: 12px;
+        object-fit: cover;
+      }
+      .person-photo { object-position: center 28%; }
+      .person-details h3 {
+        margin: 0 0 4px;
+        color: var(--navy);
+        font-size: 1.35rem;
+      }
+      .person-role {
+        display: block;
+        margin-bottom: 18px;
+        color: var(--gold);
+        font-size: 0.8rem;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .person-contact {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        color: var(--muted);
+        font-weight: 600;
+      }
+      .person-contact:hover { color: var(--navy); }
+      .person-contact svg {
+        width: 19px;
+        height: 19px;
+        fill: var(--gold);
+      }
+      .contact-list {
+        list-style: none;
+        padding: 0;
+        margin: 28px 0 0;
+        display: grid;
+        gap: 18px;
+      }
+      .contact-list li { display: flex; gap: 14px; align-items: flex-start; }
+      .contact-icon {
+        width: 42px;
+        height: 42px;
+        flex: 0 0 42px;
+        display: grid;
+        place-items: center;
+        border-radius: 12px;
+        background: rgba(200,169,107,0.16);
+        color: var(--navy);
+        font-weight: 800;
+      }
+      .contact-icon svg {
+        width: 21px;
+        height: 21px;
+        fill: currentColor;
+      }
+      .contact-list strong { display: block; color: var(--navy); }
+      .contact-list span,
+      .contact-list a { color: var(--muted); }
+      .contact-list a:hover { color: var(--navy); }
+
+      footer {
+        background: #0a1826;
+        color: rgba(255,255,255,0.8);
+        padding: 26px 0;
+        text-align: center;
+      }
+      @media (max-width: 780px) {
+        .nav { flex-direction: column; justify-content: center; gap: 12px; padding: 14px 0; }
+        .nav-links { justify-content: center; gap: 14px 18px; }
+        .contact-grid { grid-template-columns: 1fr; }
+      }
+      @media (max-width: 560px) {
+        .page-hero { padding: 76px 0 64px; }
+        section { padding: 62px 0; }
+        .people-grid { grid-template-columns: 1fr; }
+        .person-card { align-items: flex-start; }
+      }
+
+      header { background: rgba(36, 16, 20, 0.97); border-color: rgba(241, 161, 91, 0.35); }
+      .page-hero { background: linear-gradient(135deg, rgba(36, 16, 20, 0.94), rgba(74, 21, 27, 0.84)), url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat; }
+      .contact-card { background: #fffaf5; border-color: rgba(74, 21, 27, 0.1); }
+      .contact-icon { background: rgba(198, 90, 30, 0.14); }
+      footer { background: #160b0d; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <a class="brand" href="URBAN%20SOLUTIONS%20AFRICA.html">
+          <img src="WhatsApp%20Image%202026-08-13%20at%2017.57.10.jpeg" alt="Urban Solutions Africa logo" />
+          <span>Urban Solutions Africa</span>
+        </a>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="services.html">Services</a>
+          <a href="why-us.html">Why Us</a>
+          <a href="municipalities.html">Municipalities</a>
+          <a class="active" href="contact.html" aria-current="page">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container page-hero-content">
+          <span class="eyebrow">Let us assist you</span>
+          <h1>Start with a conversation.</h1>
+          <p>Tell us what you need help with and our team will guide you toward the clearest next step for your municipal or property matter.</p>
+        </div>
+      </section>
+
+      <section>
+        <div class="container contact-grid">
+          <aside class="contact-card">
+            <h2>Reach our team</h2>
+            <p>We make it easier to move municipal matters forward with clear communication and practical support.</p>
+            <ul class="contact-list">
+              <li>
+                <span class="contact-icon" aria-hidden="true">@</span>
+                <div><strong>Email</strong><a href="mailto:Info@urbansolutions.co.za">Info@urbansolutions.co.za</a></div>
+              </li>
+              <li>
+                <span class="contact-icon" aria-hidden="true">☎</span>
+                <div><strong>Phone</strong><a href="tel:0656646848">0656646848</a></div>
+              </li>
+              <li>
+                <span class="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" role="img"><path d="M12 2.5a9.4 9.4 0 0 0-8.1 14.2L2.5 21.5l4.9-1.3A9.5 9.5 0 1 0 12 2.5Zm0 16.9a7.4 7.4 0 0 1-3.8-1l-.3-.2-2.9.8.8-2.8-.2-.3A7.4 7.4 0 1 1 12 19.4Zm4.1-5.5c-.2-.1-1.3-.7-1.5-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.7 1-.1.2-.3.2-.5.1-1.4-.7-2.4-1.3-3.4-2.9-.2-.3.2-.3.6-1 .1-.2.1-.3 0-.5l-.7-1.6c-.2-.4-.4-.3-.5-.3h-.4c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.4 1 2.5c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.2.7 3 .6.5-.1 1.3-.5 1.5-1 .2-.5.2-.9.1-1-.1-.2-.2-.2-.4-.3Z" /></svg>
+                </span>
+                <div><strong>WhatsApp</strong><a href="https://wa.me/27656646848" target="_blank" rel="noopener noreferrer">065 664 6848</a></div>
+              </li>
+              <li>
+                <span class="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" role="img"><path d="M5.4 3.5A2.4 2.4 0 1 1 5.4 8.3a2.4 2.4 0 0 1 0-4.8ZM3.4 9.8h4v10.7h-4V9.8Zm6.5 0h3.8v1.5h.1c.5-.9 1.7-1.9 3.6-1.9 3.9 0 4.6 2.6 4.6 6v5.1h-4v-4.5c0-1.1 0-2.6-1.6-2.6s-1.9 1.2-1.9 2.5v4.6h-4V9.8Z" /></svg>
+                </span>
+                <div><strong>LinkedIn</strong><a href="https://www.linkedin.com/company/urban-solutions-africa/ntact" target="_blank" rel="noopener noreferrer">Urban Solutions Africa</a></div>
+              </li>
+              <li>
+                <span class="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" role="img"><path d="M14 8h2.4V4.2c-.4-.1-1.7-.2-3.2-.2-3.2 0-5.4 2-5.4 5.6V13H4.3v4.2h3.5v6.6h4.3v-6.6h3.6l.6-4.2h-4.2V10c0-1.2.3-2 1.9-2Z" /></svg>
+                </span>
+                <div><strong>Facebook</strong><a href="https://www.facebook.com/share/1EFPE3y3Z1/" target="_blank" rel="noopener noreferrer">Urban Solutions Africa</a></div>
+              </li>
+              <li>
+                <span class="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" role="img"><path d="M15.6 3h3.1c.2 1.3.9 2.4 2.3 3.1v3.2c-1.2 0-2.5-.4-3.4-1.1v6.1c0 3.6-2.4 5.7-5.5 5.7-2.8 0-5.1-2-5.1-4.8 0-3 2.5-5.1 5.7-5.1.3 0 .6 0 .9.1v3.2a3 3 0 0 0-.9-.1c-1.1 0-2 .7-2 1.8 0 1 .8 1.7 1.8 1.7 1.2 0 2- .8 2-2.5V3Z" /></svg>
+                </span>
+                <div><strong>TikTok</strong><a href="https://www.tiktok.com/@urban.solutions.a?_r=1&_t=ZS-98semuhLeE5" target="_blank" rel="noopener noreferrer">@urban.solutions.a</a></div>
+              </li>
+              <li>
+                <span class="contact-icon" aria-hidden="true">⌖</span>
+                <div><strong>Service area</strong><span>Johannesburg, Tshwane and Ekurhuleni</span></div>
+              </li>
+              <li>
+                <span class="contact-icon" aria-hidden="true">◷</span>
+                <div><strong>Availability</strong><span>Consultations available 24/7</span></div>
+              </li>
+            </ul>
+          </aside>
+
+        </div>
+
+        <div class="container leadership-section">
+          <div class="leadership-heading">
+            <h2>Meet Our Leadership</h2>
+            <p>Connect directly with the team guiding Urban Solutions Africa.</p>
+          </div>
+          <div class="people-grid">
+            <article class="person-card">
+              <img class="person-photo" src="WhatsApp%20Image%202026-09-04%20at%2021.15.19.jpeg" alt="Mr Russel Musiyamwa, Director" />
+              <div class="person-details">
+                <h3>Mr Russel Musiyamwa</h3>
+                <span class="person-role">Director</span>
+                <a class="person-contact" href="tel:0656646848">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 2.8 9.2 2c.6-.2 1.2.1 1.5.7l1.4 3.2c.2.5.1 1-.3 1.4L10.3 8.8c1 2.1 2.7 3.8 4.9 4.9l1.5-1.5c.4-.4.9-.5 1.4-.3l3.2 1.4c.6.3.9.9.7 1.5l-.8 2.6c-.2.7-.9 1.1-1.6 1.1C11.5 18.5 5.5 12.5 5.5 4.4c0-.7.4-1.4 1.1-1.6Z" /></svg>
+                  065 664 6848
+                </a>
+              </div>
+            </article>
+
+            <article class="person-card no-photo">
+              <div class="person-details">
+                <h3>Mr N</h3>
+                <span class="person-role">Partner</span>
+                <a class="person-contact" href="tel:0824856362">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 2.8 9.2 2c.6-.2 1.2.1 1.5.7l1.4 3.2c.2.5.1 1-.3 1.4L10.3 8.8c1 2.1 2.7 3.8 4.9 4.9l1.5-1.5c.4-.4.9-.5 1.4-.3l3.2 1.4c.6.3.9.9.7 1.5l-.8 2.6c-.2.7-.9 1.1-1.6 1.1C11.5 18.5 5.5 12.5 5.5 4.4c0-.7.4-1.4 1.1-1.6Z" /></svg>
+                  082 485 6362
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">© 2026 URBAN SOLUTIONS AFRICA | Municipal support made easier</div>
+    </footer>
+
+  </body>
+</html>

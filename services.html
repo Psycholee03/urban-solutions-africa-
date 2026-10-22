@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Services | URBAN SOLUTIONS AFRICA</title>
+    <meta
+      name="description"
+      content="Explore the municipal and property services offered by URBAN SOLUTIONS AFRICA, including rates accounts, refunds, billing, clearance certificates, Eskom accounts, zoning information, and plan copies."
+    />
+    <style>
+      :root {
+        --navy: #4a151b;
+        --navy-2: #241014;
+        --gold: #c65a1e;
+        --gold-light: #f1a15b;
+        --ivory: #fbf4ec;
+        --bone: #e9d5c1;
+        --text: #251a18;
+        --muted: #6d5a55;
+        --white: #ffffff;
+        --success: #1d7d5f;
+        --shadow: 0 20px 50px rgba(74, 21, 27, 0.14);
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: linear-gradient(180deg, #f8efe8 0%, #ffffff 100%);
+        color: var(--text);
+        line-height: 1.7;
+      }
+      a { text-decoration: none; }
+      .container { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+
+      header {
+        background: rgba(13, 27, 42, 0.96);
+        color: var(--white);
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        border-bottom: 1px solid rgba(200, 169, 107, 0.3);
+      }
+      .nav {
+        min-height: 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--gold-light);
+        font-size: 1.3rem;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        text-shadow: 0 2px 16px rgba(232, 213, 162, 0.2);
+      }
+      .brand img {
+        width: 64px;
+        height: 50px;
+        object-fit: contain;
+        padding: 3px;
+        border-radius: 8px;
+        background: var(--white);
+      }
+      .nav-links {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .nav-links a {
+        color: rgba(255,255,255,0.8);
+        font-size: 0.92rem;
+        letter-spacing: 0.04em;
+      }
+      .nav-links a:hover { color: var(--gold-light); }
+
+      .page-hero {
+        background: linear-gradient(135deg, rgba(13, 27, 42, 0.92), rgba(22, 38, 61, 0.78)),
+          url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+        color: var(--white);
+        padding: 110px 0 80px;
+      }
+      .hero-inner {
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        gap: 28px;
+        align-items: end;
+      }
+      .page-hero-content {
+        max-width: 760px;
+      }
+      .eyebrow {
+        display: inline-block;
+        padding: 8px 16px;
+        border-radius: 999px;
+        background: rgba(200, 169, 107, 0.12);
+        border: 1px solid rgba(200, 169, 107, 0.35);
+        color: var(--gold-light);
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+      h1 {
+        font-size: clamp(2.6rem, 5vw, 4.6rem);
+        margin: 18px 0 14px;
+        letter-spacing: -0.04em;
+        line-height: 1.02;
+      }
+      .page-hero p {
+        margin: 0;
+        color: rgba(255,255,255,0.88);
+        font-size: 1.08rem;
+      }
+      .hero-panel {
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(200,169,107,0.26);
+        border-radius: 24px;
+        padding: 22px;
+        box-shadow: 0 18px 40px rgba(4, 10, 18, 0.2);
+      }
+      .panel-label {
+        color: var(--gold-light);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-size: 0.72rem;
+        margin-bottom: 10px;
+      }
+      .hero-stat-row {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-bottom: 18px;
+      }
+      .stat {
+        padding: 14px 8px;
+        text-align: center;
+        border-radius: 16px;
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(255,255,255,0.08);
+      }
+      .stat strong {
+        display: block;
+        font-size: 1.8rem;
+        color: var(--gold-light);
+      }
+      .stat span {
+        font-size: 0.66rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: rgba(255,255,255,0.75);
+      }
+      .service-spotlight {
+        border-top: 1px solid rgba(255,255,255,0.08);
+        padding-top: 18px;
+      }
+      .service-spotlight p {
+        margin: 0 0 10px;
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.72);
+      }
+      .service-spotlight h3 {
+        margin: 0;
+        font-size: 1.5rem;
+        color: var(--white);
+      }
+
+      section { padding: 88px 0; }
+      .section-head {
+        text-align: center;
+        margin-bottom: 34px;
+      }
+      .section-head h2 {
+        margin: 0 0 10px;
+        font-size: clamp(2rem, 4vw, 3rem);
+        color: var(--navy);
+        letter-spacing: -0.04em;
+      }
+      .section-head p {
+        max-width: 760px;
+        margin: 0 auto;
+        color: var(--muted);
+      }
+
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+      }
+      .service-card {
+        background: linear-gradient(180deg, #ffffff 0%, #f9f5f0 100%);
+        border-radius: 24px;
+        box-shadow: var(--shadow);
+        padding: 28px 24px;
+        border: 1px solid rgba(200,169,107,0.2);
+        position: relative;
+        overflow: hidden;
+      }
+      .service-card::before {
+        content: "";
+        position: absolute;
+        inset: 0 auto auto 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, var(--gold-light), var(--gold));
+      }
+      .icon {
+        width: 62px;
+        height: 62px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 18px;
+        background: linear-gradient(135deg, rgba(200,169,107,0.22), rgba(13,27,42,0.06));
+        color: var(--navy);
+        font-size: 1.8rem;
+        margin-bottom: 18px;
+        box-shadow: inset 0 0 0 1px rgba(200,169,107,0.25);
+      }
+      .service-card h3 {
+        margin: 0 0 12px;
+        font-size: 1.35rem;
+        color: var(--navy);
+      }
+      .service-card p {
+        margin: 0;
+        color: var(--muted);
+      }
+      .service-card:hover {
+        transform: translateY(-4px);
+        transition: transform 0.2s ease;
+      }
+
+      .highlight {
+        background: linear-gradient(180deg, rgba(246,242,234,0.8) 0%, rgba(250,247,242,1) 100%);
+      }
+      .cta-section {
+        background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
+        color: var(--white);
+      }
+      .cta-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 22px;
+        flex-wrap: wrap;
+      }
+      .cta-wrap h3 {
+        margin: 0 0 8px;
+        font-size: clamp(1.8rem, 3vw, 2.6rem);
+      }
+      .cta-wrap p { margin: 0; color: rgba(255,255,255,0.78); }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        padding: 15px 26px;
+        font-weight: 700;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .btn:hover { transform: translateY(-2px); }
+      .btn-primary {
+        background: linear-gradient(135deg, var(--gold-light), var(--gold));
+        color: var(--navy);
+        box-shadow: 0 18px 30px rgba(200, 169, 107, 0.3);
+      }
+
+      footer {
+        background: #0a1826;
+        color: rgba(255,255,255,0.8);
+        text-align: center;
+        padding: 26px 0;
+      }
+
+      @media (max-width: 900px) {
+        .hero-inner { grid-template-columns: 1fr; }
+        .card-grid { grid-template-columns: 1fr 1fr; }
+      }
+      @media (max-width: 680px) {
+        .nav { flex-direction: column; justify-content: center; gap: 12px; padding: 14px 0; }
+        .nav-links { justify-content: center; }
+        .card-grid { grid-template-columns: 1fr; }
+        .hero-stat-row { grid-template-columns: 1fr; }
+      }
+
+      header { background: rgba(36, 16, 20, 0.97); border-color: rgba(241, 161, 91, 0.35); }
+      .page-hero { background: linear-gradient(135deg, rgba(36, 16, 20, 0.94), rgba(74, 21, 27, 0.84)), url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat; }
+      .service-card { background: linear-gradient(180deg, #fffaf5 0%, #f6e8da 100%); border-color: rgba(198, 90, 30, 0.22); }
+      .icon { background: linear-gradient(135deg, rgba(198, 90, 30, 0.2), rgba(74, 21, 27, 0.08)); }
+      footer { background: #160b0d; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <a class="brand" href="URBAN%20SOLUTIONS%20AFRICA.html">
+          <img src="WhatsApp%20Image%202026-08-13%20at%2017.57.10.jpeg" alt="Urban Solutions Africa logo" />
+          <span>Urban Solutions Africa</span>
+        </a>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="URBAN%20SOLUTIONS%20AFRICA.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="why-us.html">Why Us</a>
+          <a href="municipalities.html">Municipalities</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container hero-inner">
+          <div class="page-hero-content">
+            <span class="eyebrow">What we do</span>
+            <h1>Municipal support designed for clarity, speed, and peace of mind.</h1>
+            <p>
+              We handle the layered administrative demands that often slow people down, helping clients move through municipal processes with confidence,
+              precision, and less friction.
+            </p>
+          </div>
+
+          <div class="hero-panel">
+            <div class="panel-label">Service focus</div>
+            <div class="hero-stat-row">
+              <div class="stat">
+                <strong>9</strong>
+                <span>core services</span>
+              </div>
+              <div class="stat">
+                <strong>3</strong>
+                <span>metros</span>
+              </div>
+              <div class="stat">
+                <strong>1</strong>
+                <span>partner</span>
+              </div>
+            </div>
+            <div class="service-spotlight">
+              <p>Specialised support</p>
+              <h3>Rates, billing, zoning & compliance</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="section-head">
+            <h2>Our Services</h2>
+            <p>
+              We provide practical support for both residential and business clients across Johannesburg, Tshwane, and Ekurhuleni.
+            </p>
+          </div>
+
+          <div class="card-grid">
+            <article class="service-card">
+              <div class="icon">🏙️</div>
+              <h3>Rates Accounts</h3>
+              <p>Support with opening and closing of rates accounts, administrative updates, and account-related follow-ups.</p>
+            </article>
+
+            <article class="service-card">
+              <div class="icon">💰</div>
+              <h3>Refund Applications</h3>
+              <p>Assist with termination of the seller's rates account and request any available refund or credit transfer.</p>
+            </article>
+
+            <article class="service-card">
+              <div class="icon">🧾</div>
+              <h3>Billing Queries</h3>
+              <p>Help resolving billing concerns, account discrepancies, and other municipal payment challenges.</p>
+            </article>
+
+            <article class="service-card">
+              <div class="icon">📄</div>
+              <h3>Clearance Figures</h3>
+              <p>Assist conveyancers with rates clearance figures applications and obtain clearance certificates.</p>
+            </article>
+
+            <article class="service-card">
+              <div class="icon">✅</div>
+              <h3>Certificate Queries</h3>
+              <p>Support for certificate-related enquiries and the administrative requirements behind them.</p>
+            </article>
+
+            <article class="service-card">
+              <div class="icon">📜</div>
+              <h3>Clearance Certificates</h3>
+              <p>Assistance with clearance certificate applications, supporting documents, and municipal follow-ups.</p>
+            </article>
+
+            <article class="service-card">
+              <div class="icon">⚡</div>
+              <h3>Eskom Accounts</h3>
+              <p>Assist purchasers with obtaining Eskom electricity accounts.</p>
+            </article>
+
+            <article class="service-card">
+              <div class="icon">📐</div>
+              <h3>Zoning Information</h3>
+              <p>Help clients obtain zoning certificates for any property in Gauteng.</p>
+            </article>
+
+            <article class="service-card">
+              <div class="icon">🗂️</div>
+              <h3>Copies of Plans</h3>
+              <p>Support in obtaining copies of plans and other municipal property records when required.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section">
+        <div class="container cta-wrap">
+          <div>
+            <h3>Need help with a municipal issue?</h3>
+            <p>We are ready to simplify the process and take the pressure off you.</p>
+          </div>
+          <a class="btn btn-primary" href="contact.html">Request Assistance</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        © 2026 URBAN SOLUTIONS AFRICA | Municipal support made easier
+      </div>
+    </footer>
+  </body>
+</html>
